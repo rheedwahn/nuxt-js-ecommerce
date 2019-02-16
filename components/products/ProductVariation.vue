@@ -8,15 +8,20 @@
                 <select name="" id="">
                     <option value="">Please Select a variation</option>
                     <option
-                    v-for="variation in variations" 
-                    :key="variation.id"
-                    >
-                    {{ variation.name }}
-                    </option>
+                        v-for="variation in variations" 
+                        :key="variation.id"
+                        :value="variation.id"
+                        >
+                        {{ variation.name }}
+
+                        <template v-if="variation.price_varies">
+                            ({{ variation.price }})
+                        </template>
+                    </option>   
                 </select>
             </div>
         </div>
-    </div>
+    </div> 
 </template>
 
 <script>
