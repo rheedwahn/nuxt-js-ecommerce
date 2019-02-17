@@ -15,7 +15,9 @@
                         </p>
 
                         <hr>
-
+                        <span class="tag is-rounded is-medium is-dark" v-if="!product.in_stock">
+                            Out of stock
+                        </span>
                         <span class="tag is-rounded is-medium">
                             {{ product.price }}
                         </span>
@@ -32,8 +34,10 @@
                             <div class="field has-addons" v-if="form.variation">
                                 <div class="control">
                                     <div class="select is-fullwidth">
-                                        <select name="" id="">
-                                            <option value="">1</option>
+                                        <select name="" id="" v-model="form.quantity">
+                                            <option :value="x" v-for="x in parseInt(form.variation.stock_count)" :key="x">
+                                                {{ x }}
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -63,6 +67,16 @@ export default {
         }
     },
 
+    watch: {
+        'form.variation' () {
+            this.form.quantity = 1
+        }
+    },
+
+    components: {
+        ProductVariation
+    },
+
     async asyncData ({ params, app }) {
         let response = await app.$axios.$get(`http://cart.test/api/products/${params.slug}`)
 
@@ -70,9 +84,5 @@ export default {
             product: response.data
         }
     },
-
-    components: {
-        ProductVariation
-    }
 }
 </script>
