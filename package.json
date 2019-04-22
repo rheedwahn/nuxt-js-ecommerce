@@ -13,9 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.3.6",
+    "acorn": "^6.1.1",
+    "ajv": "^6.10.0",
     "bulma": "^0.7.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.6.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -24,7 +27,9 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
+    "node-gyp": "^3.8.0",
     "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "tar": "^4.4.8"
   }
 }
