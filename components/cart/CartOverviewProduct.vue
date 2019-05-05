@@ -52,7 +52,6 @@ export default {
 
     watch : {
         'quantity' (quantity) {
-            console.log(quantity)
             this.update({productId: this.product.id, quantity})
         }
     },
