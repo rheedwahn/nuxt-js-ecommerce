@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.3.6",
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "ajv": "^6.10.0",
     "bulma": "^0.7.2",
     "nuxt": "^2.6.3"
